@@ -1,0 +1,21 @@
+\section{Systemarkitektur}
+Systemarkitektur er en  anbefaling til systemets oppbygging og samspill mellom de ulike delene av systemet.
+
+Tjenesten burde bli implementert i tråd med "Model-View-Controll" arkitektursmodellen, som da deler det logiske i tre deler. 
+%hvor da tjenesten er delt opp i tre logiske deler som samhandler med hverandre. 
+Grunnen er at det er standard i mange tjenester og har en del støtte til rammeverk og kodespråk. 
+
+View korresponderer til brukergrensesnittet, altså det brukeren ser på skjermen sin. Det viser hvordan dataen presenterer til brukeren. 
+Model er programmets datastruktur som administerer data, logikk og regler til tjenesten. Den får bruker data fra controller.
+Conrtoller er mellomleddet mellom view og model. Den godtar input og konverterer de til kommandoer for model eller view. Logikken for hvordan dataen blir vist fram i brukergrensesnittet, og hvordan tjenesten responderer for ulike handlinger i view ligger her. 
+
+Fordelen med å benytte den arkitekturen er at de er uavhengige av hverandre, og at hvis du endrer en av de komponentene, uten å påvirke de andre komponentene. 
+Vi kan unngå replikasjon og kan bytte view for å tilfredstille andre platformer som mobilapplikasjon.
+
+Tjenesten grensesnitt burde utvikles i samarbeid med UX UI designere. Dette er for å gjøre tjenesten forståelig og lett å bruke. Dette samsvarer 
+med kravet om universell utforming, hvor alle skal kunne bruke tjenesten.
+Ved å gjøre tjenesten lett og forståelig kan dette skape et større brukermasse. 
+
+
+
+

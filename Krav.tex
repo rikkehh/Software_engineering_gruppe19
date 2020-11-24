@@ -1,0 +1,225 @@
+
+\section{Krav}
+\textit{Kravene skal være beskrevet tydelig, identifiserbar, hensiktsmessig detaljnivå, dekker nødvendige funksjoner i systemet. }
+
+Denne seksjonen forteller om kravene vi finner til systemet, altså krav til innholdet. Det vil si alle funksjoner og funksjonaliteter som blir implementert i systemet. Disse finner vi ved hjelp av brukerhistoriene, user casene og user case diagrammet som vi har laget i forrige seksjon.
+
+%Ut ifra brukerhistoriene, usercase og user case diagrammet har vi kommet fram til kravene for tjenesten. Det vil tilsvare de funksjonene vi vil implementere til systemet.
+
+Vi har definert flere roller i kravene. Disse rollene er bruker, utleier, firma og administrator. Det er for å spesifisere hvilke funksjoner som passer til ulike roller. Utleier og bruker går under det samme i systemet, mens administrator, på den andre siden, er en bruker eller et firma med ekstra rettigheter. 
+%I systemet er bruker og utleier det samme og admin er en bruker eller firma med ekstra rettigheter. 
+%hva slags funksjoner er tenkt til hvem. em de forskjellige funksjonene er tenkt til.
+
+Firma er en bedriftskunde. De kan bare leie ut plasser, og vil betale en månedlig sum for tjenesten. 
+Utleierne er privatpersoner som leier ut parkeringsplassene sine. De vil betale en prosentdel av inntekten etter en viss periode.
+
+Brukerne er privatpersoner som kan leie parkeringsplasser. De vil betale for plassen gjennom tjenesten. 
+Administrator er eierene av tjenesten. 
+Personene under denne tittelen skal bidra med å holde tjenesten saklig.
+
+\subsection{Funksjonelle krav}
+\subsubsection{Opprette bruker}
+\label{registere_bruker}
+Brukeren/firma/utleieren skal kunne opprette en ny bruker i tjenesten.
+\begin{enumerate}[label=(\alph*)]
+    \item Brukeren/firma/utleieren skal kunne opprette en bruker i tjenesten med hjelp av epost adresse.
+    \item Brukeren/utleieren skal kunne opprette en bruker i tjenesten med hjelp av Facebook konto.
+    \item Brukeren/firma/utleieren skal kunne opprette en bruker i tjenesten med hjelp av Google konto.
+    \item Firma må oppgi organisasjonsnummer ved opprettelse av bruker.
+\end{enumerate}
+
+
+\subsubsection{Logge inn}
+\label{logge_inn}
+Brukeren/firma/utleieren skal kunne logge inn i tjenesten.
+\begin{enumerate}[label=(\alph*)]
+    \item Brukeren/firma/utleieren skal kunne logge inn i tjenesten med hjelp av epost adresse.
+    \item Brukeren/utleieren skal kunne logge inn i tjenesten med hjelp av Facebook konto.
+    \item Brukeren/firma/utleieren skal kunne logge inn i tjenesten med hjelp av Google konto.
+    \item Ved feil brukernavn eller feil passord skal systemet gi beskjed til brukeren at brukernavn eller passord er feil.
+    \item Bruker/firma/utleier skal få beskjed om feil, hvis verifiseringen er feil.
+    \item Brukeren/firma/utleieren skal kunne gjenopprette konto ved glemt passord.
+\end{enumerate}
+
+\subsubsection{Tofaktorisering}
+\label{tofaktor}
+Tjenesten skal kunne logge seg inn i tjenesten med tofaktorautentisering.
+\begin{enumerate}[label=(\alph*)]
+    \item Brukeren/firma/utleieren skal kunne ha muligheten å slå på       tofaktorautentisering for å logge inn på kontoen.
+    \item Administrator skal kunne ha tofaktorautentisering for å logge inn på kontoen.
+    \item Utleieren/firma skal ha tofaktorautentisering for å legge ut en parkeringsplass.
+    \item Brukeren/firma/utleieren skal ha tofaktorautentisering for å redigere brukerkonto informasjon om seg selv.
+    \item Tofaktorautentisering skal kunnes gjøres med en SMS.
+    \item Tofaktorautentisering skal kunne gjøres med en  autorisering applikasjon.
+\end{enumerate}
+
+\subsubsection{Legge inn/ redigere parkeringsplass}
+\label{Legge_parkering}
+Utleieren skal kunne legge til parkeringsplass i tjenesten, slik at den kan bli leid ut.
+\begin{enumerate}[label=(\alph*)]
+    \item Firma skal kunne legge inn parkeringsplasser inn i tjenesten.
+    \item Utleieren skal kunne bestemme prisen på sine parkeringsplasser for ulike tidsrom.
+    \item Utleieren skal kunne sette plassen utilgjengelig de dagene utleier bruker plassen selv.
+    \item Ved utleie av større område (næring) skal det være mulig å spesifisere antall plasser.
+    \item Firma skal kunne bestemme prisen på sine parkeringsplasser for ulike tidsrom.
+    \item Utleieren skal kunne redigere informasjonen om sine egne parkeringsplasser.
+    \item Firma skal kunne redigere informasjon om sine egne  parkeringsplasser.
+    \item Administrator skal kunne redigere informasjon om en parkeringsplass.
+\end{enumerate}
+
+
+\subsubsection{Leie parkeringsplass}
+\label{leie_park}
+Brukeren skal kunne leie en parkeringsplass i et gitt tidsrom.
+\begin{enumerate}[label=(\alph*)]
+    \item Brukeren skal kunne få en bekreftelse at parkeringsplassen er kjøpt av brukere for det gitte tidsrommet
+    \item Brukeren skal kunne se antall utilgjengelig og tilgjengelig plasser på en lokasjon.
+\end{enumerate}
+
+
+\subsubsection{Søke parkeringsplasser}
+\label{søke_park}
+Bruker skal kunne søke opp parkeringsplasser.
+\begin{enumerate}[label=(\alph*)]
+   \item Brukeren skal kunne se tilgjengelige plasser i ønsket område i kart.
+\end{enumerate}
+
+\subsubsection{Brukerprofil}
+\label{bruker_profil}
+Brukeren/firma/utleieren skal kunne ha en brukerprofil.
+\begin{enumerate}[label=(\alph*)]
+    \item Brukeren skal kunne se oversikt over leide plasser.
+    \item Utleieren/firma skal kunne se oversikt over sine egne parkeringsplasser.
+    \item Brukeren skal kunne se tidligere leide plasser.
+    \item Brukeren/firma/utleieren skal kunne redigere brukerkonto informasjon om seg selv.
+    \item Administrator skal kunne se en oversikt over alle brukere.
+    \item Administrator skal kunne se en oversikt over alle utleide plasser og hvem som har leid de ut.
+    \item Utleieren/firma skal kunne se en oversikt av inntjeninger av parkeringsplass(ene). 
+    \item Tjenesten skal vise en oversikt av inntjeninger i form av kakegrafer.
+\end{enumerate}
+
+
+
+\subsubsection{Betaling}
+\label{betaling}
+Brukeren skal kunne betale for leie og utleie av parkeringsplasser ved å bruke Vipps/Mastercard.
+\begin{enumerate}[label=(\alph*)]
+  \item Brukeren skal ha muligheten til   å få en betalingen refundert maks   10 minutter etter et eventuelt feilkjøp.
+    \item Det skal være tydelig hva betalingen er så en bruker ikke blir usikker på om betalingen/produktet er feil. 
+    \item Brukeren skal ha mulighet til å se alle sine tidligere betalinger.
+    \item Brukeren skal kunne avbestille den kjøpte parkeringsplassen og få pengene tilbake, 24 timer før parkeringen starter.
+    \item Firma skal kunne betale en fast månedsbeløp for å bruke tjenesten med faktura/avtalegiro.
+    \item Utleieren skal kunne betale en prosentvis av leieinntektene etter 6 måneders gratisperiode.
+    \item Tjenesten skal kunne ha en konto hvor betalingene til de ulike funksjonene blir overført. 
+    \item Utleieren skal kunne få pengene fra utleie av parkeringsplassene sine gjennom tjenesten sin konto.
+\end{enumerate}
+
+\subsubsection{Redigering av informasjon}
+\label{redigering}
+Administrator skal kunne redigere innholdet på siden, slik som "ofte stilte spørsmål" og nyheter
+
+%Notasjon, annotasjon, bemerkning, anmerkning, kommentar, notis?
+\subsubsection{Varsler}
+\label{merking}
+Brukeren skal kunne varsle om en utleier som usaklig/upassende
+\begin{enumerate}[label=(\alph*)]
+    \item Utleieren skal kunne varsle om en bruker er usaklig/upassende.
+    \item Firma skal kunne varsle en bruker som usaklig/upassende
+\end{enumerate}
+
+\subsubsection{Fjerne parkeringsplass/bruker/profil}
+\label{fjerne}
+Utleieren/firma skal kunne fjerne sine egne parkeringsplasser.
+\begin{enumerate}[label=(\alph*)]
+    \item Administrator skal kunne fjerne en bruker/utleier som er usaklig/upassende.
+    \item Administrator skal kunne fjerne parkeringsplasser som er usaklig/upassende.
+    \item Brukeren/firma/utleier skal kunne slette sin egen profil.
+    
+\end{enumerate}
+
+\subsubsection{Verifisering}
+\label{verifisering}
+Administrator skal kunne verifisere at parkeringsplassen tilhører faktisk utleieren/firma
+\begin{enumerate}[label=(\alph*)]
+    \item Administrator skal kunne fryse en annonse frem til eierskap av plassen er bekreftet
+\end{enumerate}
+
+\subsubsection{Hjelp og Support}
+\label{hjelp_support}
+Tjenesten skal være enkelt å bruke og lett å få hjelp. Dette gjøres ved at:
+\begin{enumerate}[label=(\alph*)]
+    \item Brukeren/firma/utleieren skal kunne se kontaktinformasjon til kundestøtte.
+    \item Brukeren/firma/utleieren skal kunne se ofte stilte spørsmål som administrasjonen . 
+
+\end{enumerate}
+
+%\subsubsection{Kontakt}
+%\textit{Administrator skal kunne kontakte brukere av systemet.}
+%\begin{enumerate}[label=(\alph*)]
+ %   \item Brukeren skal kunne kontakte admin angående useriøse hendelser.
+ %   \item Utleieren/firma skal kunne kontakte admin angående useriøse hendelser.
+%\end{enumerate}
+
+
+\subsection{Ikke-funksjonelle krav}
+%\textit{Tjenesten skal utformes i tråd med lovgivingen i GDPR. Alle underleverandører skal også oppfylle kravene til GDPR. }
+\subsubsection{Personopplysningsloven}
+\label{personvern}
+Tjenesten skal tilfredsille krav i personopplysningsloven, som omhandler innsamling og bruk av personopplysninger. Dette gjelder de nasjonale reglene, samt EUs personvernsforordning (GDPR - General Data Protection Regulation). \newline
+- \href{https://www.datatilsynet.no/regelverk-og-verktoy/lover-og-regler/}{Datatilsynet}
+
+\subsubsection{Krav om universell utforming}
+\label{universell_u}
+Tjenesten skal som ett minimum tilfredstille minstekravet, beskrevet i det kommende regelverket for universell utforming av IKT-løsninger, WAD og WCAG 2.1.\newline 
+- \href{https://uu.difi.no/}{Digitaliseringsdirektoratet}
+
+
+
+\subsubsection{Sikkerhet}
+\label{sikkerhet}
+Databasen skal sikres mot angrep, ved at det blir tatt backup av databasen.
+\begin{enumerate}[label=(\alph*)]
+    \item En betaling skal verifiseres i løpet av maks 3 sekunder. 
+    \item Kortnummer og lignende skal ikke bli lagret for en bruker og være kryptert under en betaling.
+\end{enumerate}
+
+\subsubsection{Tekniske krav}
+\label{teknisk_krav}
+Applikasjon skal bli programmert i: 
+\begin{enumerate}[label=\alph*]
+    \item Node.js
+    
+\end{enumerate}
+
+
+\subsubsection{Eksterne Avhengigheter}
+\label{ekstern_avhengihet}
+Tjenesten skal ha forskjellige eksterne avhengigher. Disse avhengighetene er
+\begin{enumerate}[label=(\alph*)]
+    \item NoSQL Database som gjør at det er lettere å skalere.
+    \item Betalingstjeneste som Vipps og Mastercard.
+    \item Google Maps.
+    \item Innloggingssystem som Facebook og Google.
+\end{enumerate}
+
+
+\subsection{Videre utvikling av tjenesten}
+For å utvikle tjenesten ytterligere, kan man legge til et system hvor brukere kan gi tilbakemelding på parkeringsplassen de har leid. Dette kan være i form av stjerner eller liknende som baserer seg på deres erfaring slik som plassens lokasjon, pris, og om den var lett å komme til. Det vil også være mulig å legge inn en kommentar
+
+Som nevnt tidligere i oppgaven, så er det ett bevisst ønske at systemet skal være tilgjengelig med en API. Dette for at senere kan utvikles flere plattformer hvor brukere kan benytte seg av systemet. Dette innebærer mobilapplikasjon, integrering i fysiske maskiner, slik som parkerings automater og liknende.
+
+Det kan legges til en innebygd chattefunksjon mellom bruker og utleier som en del av videre utvikling slik at kommunikasjonen i tjenesten skal bli lettere mellom begge parter. En sorteringsfunksjon kan legges til slik at brukeren får sortert parkeringsplasser etter pris/nærmest lokasjon og lettere kan finne billigst parkeringsplass i nærheten. Betaling for å få fremhevet parkeringsplassen er også en funksjon som kan legges til senere i systemet slik at interesserte firmaer kan få flere visninger mot betaling. En funksjon for å telle hvor mange brukere har trykket på annonsen er også noe som kan utvikles senere, slik at utleieren/firmaet kan sjekke hvor interessant parkeringsplassen er for potensielle kunder.  
+
+Siden hvor brukeren legger inn parkeringsplasser til leie kan senere utvides med en visning av annonsen rett etter at parkeringsplassen er lagt inn i tjenesten, i stedet for en melding om at annonsen har blitt lagt inn, slik at kunden får oversikt over hvordan annonsen ser ut. En annen funksjon som kan legges til er at en bruker får leie flere parkeringsplasser på samme sted, ettersom at et firma kan for eksempel eie et større lokale og være villig til å leie ut flere av plassene sine i en enkel annonse. En funksjon hvor firma/utleier kan legge inn kvantumsrabatt ved bestilling av flere parkeringsplasser av samme person kan også legges til, slik at hvis en person bestiller 6 plasser på et sted så kan personen inngå en annen avtale med utleier/firma om å få plassene litt billigere. Systemet kan utvides med en funksjon for å legge inn bilde av lokasjonen på parkeringsplassen slik at det blir enda mer lettvint for kunden å finne fram til riktig sted.  
+
+ 
+
+Systemet kan senere bygges ut med innebygd navigasjon slik at en kunde enkelt kan trykke på parkeringsplassen kunden har leid og få opp veibeskrivelse til stedet. Dette kan gjøre løsninga for kunden enda enklere siden kunden har alt han trenger i systemet for å komme fram til riktig destinasjon. Systemet kan bygges ut med en mulighet for å søke spesifikt etter parkeringsplasser med ladestasjon til elbiler, slik at kunden kan få ladet elbilen sin hvis det er den typen bil kunden har. Utleier/firma må også få mulighet til å legge inn informasjon om parkeringsplassen er utstyrt med elbillader eller ikke hvis tjenesten skal utvides med denne funksjonen.  
+% Om at de kan skrive parkeringsplass. 
+
+
+%Det kan legges til en innebygd chattefunksjon mellom bruker og utleier som en del av videre utvikling. Man kan også legge til en sorteringsfunksjon slik at brukeren får sortert parkeringsplasser etter pris/nærmest lokasjon. Det går også an å legge til mulighet for betaling for å få fremhevet parkeringsplassen som en funksjon senere i systemet. Man kan også utvikle en funksjon for å telle hvor mange brukere har vært innom annonsen så firmaet/utleieren kan se hvor «populær» parkeringsplassen er.
+
+%Siden hvor man legger inn parkeringsplasser kan senere utvides med en visning av annonsen med en gang parkeringsplassen er lagt inn i stedet for en melding om at den har blitt lagt inn, slik at kunden faktisk får sett annonsen sin.  En annen funksjon man kan legge til er at en bruker får leie flere parkeringsplasser på samme sted, og at firma/utvikler kan legge inn kvantumsrabatt ved bestilling av flere parkeringsplasser av samme person hvis de vil det. Vi kan også utvide systemet med en funksjon for å legge inn bilde av lokasjonen på parkeringsplassen slik at det blir enda lettere for kunden å finne fram til stedet.
+
+%Systemet kan senere bygges ut med innebygd navigasjon slik at man enkelt kan trykke på parkeringsplassen man har leid og få opp veibeskrivelse til stedet, dette gjør løsninga for kunden enda enklere siden kunden har alt han trenger i systemet. Det kan også bygges ut med en mulighet for å søke spesifikt etter parkeringsplasser med ladestasjon til elbiler, slik at kunden kan få ladet elbilen sin hvis det er den typen bil han har. Utleier/firma må da også få mulighet til å legge inn informasjon om parkeringsplassen er utstyrt med elbillader eller ikke.

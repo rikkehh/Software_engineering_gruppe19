@@ -1,0 +1,78 @@
+\section{Estimering}
+% Forklare Estimering og T-shirt estimering.
+
+%Hva er estimering?
+Estimering handler om å forutse hva som kan ta mest tid i utviklingen, og beregne hva som skal ha mest prioritet. Ved å sette opp en estimering vil det gjøre planlegging av oppgaver enklere og gi en god oversikt over prioriteringen.
+
+%Hva er T-shirt estimering?
+
+T-shirt estimering er en en sortert estimering basert på størrelsen og verdien av hvert krav. Ordet T-shirt kommer av at estimeringen er satt som klesstørrelser, "small, medium, large x-large". Et krav med "small" størrelse vil være enkelt å implementere, og har det "x-large" verdi vil kravet være ekstra viktig å få igjennom. Summen vil da være både størrelsen og verdien sammen og gir en god oversikt over hva som burde ha førsteprioritet i systemet.
+
+Vi har fokusert på T-shirt estimering som omhandler om å estimere i fire forskjellige grupper. Først plasserer vi estimeringen av størrelsen på utviklingen i de fire gruppene og så plasserer vi estimeringen av forretningsnytten for de forskjellige kravene i de samme fire gruppene.
+De fire gruppene er delt opp i Small, Medium, Large og X-Large.
+
+Hvordan de ulike estimeringen samhandler med hverandre forteller viktigheten og prioriteringen. Det gis ved poeng.
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{r|r|r|r|r|}
+\cline{2-5}
+\multicolumn{1}{l|}{}         & \multicolumn{4}{c|}{\textbf{Utviklingsstørrelse}}                                                                             \\ \hline
+\multicolumn{1}{|r|}{\textbf{Verdi}}   & \multicolumn{1}{l|}{X-Large} & \multicolumn{1}{l|}{Large} & \multicolumn{1}{l|}{Medium} & \multicolumn{1}{l|}{Small} \\ \hline
+\multicolumn{1}{|r|}{X-Large} & 0                            & 4                          & 6                           & 7                          \\ \hline
+\multicolumn{1}{|r|}{Large}   & -4                           & 0                          & 2                           & 3                          \\ \hline
+\multicolumn{1}{|r|}{Medium}  & -6                           & -2                         & 0                           & 1                          \\ \hline
+\multicolumn{1}{|r|}{Small}   & -7                           & -3                         & -1                          & 0                          \\ \hline
+\end{tabular}
+\caption{Poengtavle for estimeringen av utviklingsstørrelsen og verdien.}
+\label{tab:poengestimering}
+\end{table}
+
+% \begin{table}[H]\centering
+% \begin{tabular}{|r|r|r|r|r|}
+% \hline
+%         & \multicolumn{4}{c|}{\textbf{Utviklingsstørrelse}} \\ \hline
+% \textbf{Verdi}   & X-Large   & Large   & Medium   & Small   \\ \hline
+% X-Large & 0         & 4       & 6        & 7       \\ \hline
+% Large   & -4        & 0       & 2        & 3       \\ \hline
+% Medium  & -6        & -2      & 0        & 1       \\ \hline
+% Small   & -7        & -3      & -1       & 0       \\ \hline
+% \end{tabular}
+% \caption{Poengtavle for estimeringen av utviklingsstørrelsen og verdien.}
+% \label{tab:poengestimering}
+% \end{table}
+
+Ved å bruke poengtavle vist i Tabell \ref{tab:poengestimering}  kan man tydeliggjøre de viktigste kravene i tjenesten og hva vi skal fokusere på i prototypen.
+
+\subsection{T-shirt estimering av kravene}
+Ved å bruke Tabell \ref{tab:poengestimering} kan vi da finne nettosum for de ulike kravene listet i Seksjon 4. 
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{llrrr} %|l|X|r|r|r|
+    % \begin{tabular}{|r|r|r|r|r|}
+        \textbf{Krav} &\textbf{Feature} & \begin{tabular}[c]{@{}l@{}} \textbf{Størrelse} \end{tabular} & \textbf{Verdi}  & \textbf{Sum} \\ \hline 
+         \ref{registere_bruker} & Opprette bruker & Small & X-Large & 7 \\ \hline
+         \ref{logge_inn} & Logge inn & Small & X-Large & 7 \\ \hline
+         \ref{Legge_parkering} &  Legge inn/redigere parkeringsplass  &Small & X-Large & 7 \\ \hline
+         \ref{leie_park} & Leie parkeringsplass &Medium & X-Large & 6 \\ \hline
+         \ref{betaling} & Betaling &Large & X-Large & 4\\ \hline
+         \ref{søke_park} & Søke parkeringsplass &Medium & Large & 2 \\
+         \hline
+         \ref{fjerne} &  Fjerne parkeringsplass/bruker/profil &Medium & Large & 2 \\ \hline
+          \ref{hjelp_support} & Hjelp og Support &Medium & Large & 2 \\ \hline
+         \ref{bruker_profil} & Brukerprofil &Large & Large & 0 \\ \hline
+         \ref{universell_u} & Universell Utforming &Medium & Medium & 0 \\ \hline
+         \ref{sikkerhet} & Sikkerhet &Large & Large & 0 \\ \hline
+          \ref{verifisering}& Verifisering &Large & Medium & -2 \\ \hline
+         \ref{redigering} & Verifisering &Large & Medium & -2 \\ \hline
+         \ref{tofaktor}& Tofaktorautentisering & Large & Medium & -2 \\ \hline
+         \ref{ekstern_avhengihet} & Eksterne Avhengigheter &Small & Large & -3 \\ \hline
+        \ref{personvern}& Personopplysningsloven &X-Large & Large & -4 \\ \hline
+    % \end{tabular}
+    \end{tabularx}
+    \caption{Vår estimering av kravene}
+    \label{tab:Kravestimering}
+\end{table}
+Utifra Tabell \ref{tab:Kravestimering} ser vi tydelig at kravene 4.1.1, 4.1.2, 4.1.4, 4.1.5 er, etter vår estimering, ansett å være de viktigste kravene. Det betyr ikke at de andre kravene ikke er viktige, men at det er disse kravene kundene får tidligst verdi og utbytte i tjenesten. 
+Så man vil fokusere på disse kravene først før man implementerer de andre kravene. Det gjør vi i prototypen, hvor vi da har tatt å implementert kravene fra estimeringen og andre vi anser som viktige for MBP.

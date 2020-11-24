@@ -1,0 +1,213 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[norsk]{babel}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % Most people will need these for mathematics
+
+
+\usepackage{minted}             % syntax highligting
+\usepackage[dvipsnames]{xcolor} % colors
+
+
+\usepackage{hyperref}           % linker i dokumentet
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=ForestGreen,
+}
+
+\urlstyle{same}
+\usepackage{fancyvrb}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+
+% \usepackage{pgfplots}
+
+\usepackage{titlesec}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage[normalem]{ulem}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand{\headrulewidth}{0.1pt}
+\fancyhead[C]{Rapport Software Engineering}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.10}
+
+\usepackage{tabularx}
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+% Formattering av paragrafer indentering og skip
+% \setlength{\parindent}{0em}
+% \setlength{\parskip}{1em}
+
+
+
+
+\title{Software Engineering Dokumentasjon}
+\author{%
+	\large
+	\textsc{Gruppe 19}\\
+	\textsc{Gruppe 193306}
+	\normalsize	H{\o}gskolen i {\O}stfold \\
+	\vspace{-5mm}	
+}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage} % Suppresses headers and footers on the title page
+
+	\centering % Centre everything on the title page
+	
+	%------------------------------------------------
+	%	Top rules
+	%------------------------------------------------
+	
+	\rule{\textwidth}{1pt} % Thick horizontal rule
+	
+	\vspace{2pt}\vspace{-\baselineskip} % Whitespace between rules
+	
+	\rule{\textwidth}{0.4pt} % Thin horizontal rule
+	
+	\vspace{0.1\textheight} % Whitespace between the top rules and title
+	
+	%------------------------------------------------
+	%	Title
+	%------------------------------------------------
+	
+	{\Huge \uppercase{\textbf{Gruppeprosjekt}} \\[0.5\baselineskip] }
+
+	\textcolor{Red}{ % Red font color
+		{\Large \textbf{Software Engineering}} \\[0.3\baselineskip] % Title line 1
+	}
+	
+	\uppercase{Høst 2020}
+	
+	\vspace{0.3em} % Whitespace between the title and short horizontal rule
+	
+	\rule{0.3\textwidth}{0.4pt} % Short horizontal rule under the title
+	
+	\vspace{0.1\textheight} % Whitespace between the thin horizontal rule and the author name
+	
+	%------------------------------------------------
+	%	Author
+	%------------------------------------------------
+
+	\vspace{0.6em}
+	
+	{\large \textsc{
+	    Fabian Berget Lindblad \\[0.1em] 
+	    Kacper Rafal Sliwa \\[0.1em] 
+	    Rikke Hedelund Hansen \\[0.2em] 
+	    Aleksander Lengard
+	    }
+    } % Author name
+    
+	\rule{0.3\textwidth}{0.4pt}
+	\vspace{0.3em}
+	
+    \textcolor{Red}{
+        \uppercase{\textbf{Gruppe 19}}
+	}
+	
+	\vfill % Whitespace between the author name and publisher
+	
+	%------------------------------------------------
+	%	Publisher
+	%------------------------------------------------
+	
+% 	{\large\textcolor{Red}{\plogo}}\\[0.5\baselineskip] % Publisher logo
+
+	{\large\textsc{Høgskolen i Østfold\\	
+		Avdeling for informasjonsteknologi}} % Publisher
+	
+	\vspace{0.1\textheight} % Whitespace under the publisher text
+	
+	%------------------------------------------------
+	%	Bottom rules
+	%------------------------------------------------
+	
+	\rule{\textwidth}{0.4pt} % Thin horizontal rule
+	
+	\vspace{2pt}\vspace{-\baselineskip} % Whitespace between rules
+	
+	\rule{\textwidth}{1pt} % Thick horizontal rule
+
+\end{titlepage}
+
+% \maketitle
+\thispagestyle{empty} % fjerner side tall fra forsiden
+
+\newpage
+% starter side telling etter forsiden
+\setcounter{page}{1}
+\tableofcontents
+\newpage
+
+% Endrer indentering på paragrafer
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0,7em}
+
+\section{Innledning}
+% \textbf{FOR HELE OPPGAVEN:\\
+% IKKE AKADEMISK RAPPORT, MEN FOR EN KUNDE OG UTVIKLINGSPARTNER. \\
+% BESKRIVER PROBLEMSTILLINGEN OG LØSNINGEN\\
+% FORSTÅELIG FOR IKKE TEKNISKE PERSONER MED DOMENEKUNNSKAP \\
+% FLYTEN ER HENSIKTMESSIG FOR Å PRESENTERE PROSJEKT PÅ EN FORSTÅELIG MÅTE\\
+% VÆRE ET OMFANG OG HA ET INNHOLD SOM GJØR DET ER TYDELIG AT DEN ER GRUNNLAGT FOR PROTOTYPEN}
+
+I faget Software Engineering og Testing har gruppen fått i oppgave å lage produktdokumentasjon for en tjeneste en oppstartsbedrift ønsker å utvikle. Vi skal skape kjernesystemet i denne tjenesten, og avdekke hvilke funksjoner og egenskaper som må være med for å imøtekomme kundens ønske. I tillegg skal det lages en prototype, et «minste brukbare produkt» som viser hvordan systemet er tenkt brukt.  
+
+\subsection{Gruppemedlemmer}
+\begin{multicols}{2}
+\begin{itemize}
+    \item[] Fabian Berget Lindblad \newline
+    \textit{Informatikk, 2. året. }\newline
+    \href{matilto:fabian.b.lindblad@hiof.no}{fabian.b.lindblad@hiof.no}
+    
+    \item[] Kacper Rafal Sliwa \newline
+    \textit{Informasjonssystemer, 2. året. }\newline
+    \href{mailto:kacper.r.sliwa@hiof.no}{kacper.r.sliwa@hiof.no}
+
+    \item[] Rikke Hedelund Hansen \newline
+    \textit{Informatikk, 2. året. }\newline
+    \href{mailto:rikke.h.hansen@hiof.no}{rikke.h.hansen@hiof.no}
+    
+    \item[] Aleksander Lengard \newline
+    \textit{Informatikk, 2. året. }\newline
+    \href{mailto:aleksander.lengard@hiof.no}{aleksander.lengard@hiof.no}
+\end{itemize}
+\end{multicols}
+
+
+
+\include{introduksjon}
+
+\include{Målgruppe}
+
+\include{Krav}
+
+\include{Estimering}
+
+\include{Systemarkitektur}
+
+\include{prototype}
+
+\end{document}
